@@ -1,0 +1,21 @@
+  <!--<pre>{{data.data | json}}</pre>-->
+        <table class="table">
+            <thead>
+                <th></th>
+                <th>Name</th>
+                <th>Detail</th>
+                <th>Age</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.data">
+                    <td>
+                        <a href="#!/phone">
+                        <img ng-src="{{item.imageUrl}}" style="max-width: 100px;" >
+                        </a>
+                    </td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.snippet}}</td>
+                    <td>{{item.age}}</td>
+                </tr>
+            </tbody>
+        </table>
