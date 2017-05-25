@@ -36,5 +36,14 @@
             errorResponse => {}
         )*/
         $scope.phones = Phone.query();
+        $scope.orderProp = "age";
+        $scope.realOrder = false;
+
+        $scope.updateOrder = function(){
+            //0 = false;
+            //1 = true
+            $scope.realOrder = Number($scope.orderOrder)
+            console.log($scope.realOrder)
+        }
     })
     

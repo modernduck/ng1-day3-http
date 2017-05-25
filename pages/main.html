@@ -1,4 +1,18 @@
   <!--<pre>{{data.data | json}}</pre>-->
+
+  <input type="text" ng-model="q" placeholder="Search" />
+  Sort <select ng-model="orderProp" >
+            <option value="age">Newest</option>
+            
+            <option value="name">Alphabetical</option>
+    </select>
+    Order
+    <select ng-model="orderOrder" ng-change="updateOrder()" >
+        <option value="0">A -> Z </option>
+        <option value="1">Z -> A</option>
+
+    </select>
+
         <table class="table">
             <thead>
                 <th></th>
@@ -7,7 +21,7 @@
                 <th>Age</th>
             </thead>
             <tbody>
-                <tr ng-repeat="item in phones">
+                <tr ng-repeat="item in phones | filter:q | orderBy:orderProp:realOrder">
                     <td>
                         <a href="#!/phone/{{item.id}}">
                          <img ng-src="{{item.imageUrl}}" style="max-width: 100%;" >
