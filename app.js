@@ -46,4 +46,11 @@
             console.log($scope.realOrder)
         }
     })
-    
+    .directive("phoneDetail", function(){
+        return {
+            templateUrl:"widgets/phone-item.html",
+            scope:{
+                "phone":"="
+            }
+        }
+    })

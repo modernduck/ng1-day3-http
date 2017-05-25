@@ -13,7 +13,11 @@
 
     </select>
 
-        <table class="table">
+        <div ng-repeat="item in phones | filter:q | orderBy:orderProp:realOrder">
+            <phone-detail phone="item"></phone-detail>
+        </div>
+
+      <!--  <table class="table">
             <thead>
                 <th></th>
                 <th>Name</th>
@@ -32,4 +36,4 @@
                     <td>{{item.age}}</td>
                 </tr>
             </tbody>
-        </table>
+        </table>-->
