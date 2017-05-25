@@ -9,8 +9,8 @@
             <tbody>
                 <tr ng-repeat="item in data.data">
                     <td>
-                        <a href="#!/phone">
-                        <img ng-src="{{item.imageUrl}}" style="max-width: 100px;" >
+                        <a href="#!/phone/{{item.id}}">
+                         <img ng-src="{{item.imageUrl}}" style="max-width: 100%;" >
                         </a>
                     </td>
                     <td>{{item.name}}</td>
