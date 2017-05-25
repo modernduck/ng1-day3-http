@@ -1,4 +1,4 @@
-  angular.module('myHttp', ['ngRoute'])
+  angular.module('myHttp', ['ngRoute', 'phone.data'])
     .config(function($routeProvider){
 
         $routeProvider.when("/", {
@@ -10,8 +10,8 @@
         })
 
     })
-    .controller("PhoneController", function($scope, $http, $routeParams){
-        $scope.phone = {};
+    .controller("PhoneController", function($scope, $http, $routeParams, Phone){
+       /* $scope.phone = {};
         $http({
             method : "GET",
             url : ("phones/" + $routeParams.id + ".json" )
@@ -20,11 +20,12 @@
                 $scope.phone = successResponse.data;
             },
             errorResponse => {}
-        )
+        )*/
+        $scope.phone = Phone.get({phoneId:$routeParams.id})
     })
-    .controller("MainController", function($scope, $http){
+    .controller("MainController", function($scope, $http, Phone){
         $scope.message = "Hi"
-        $http({
+       /* $http({
             method : "GET",
             url : "phones/phones.json"
         }).then(
@@ -33,6 +34,7 @@
                 $scope.data = successResponse;
             },
             errorResponse => {}
-        )
+        )*/
+        $scope.phones = Phone.query();
     })
     
