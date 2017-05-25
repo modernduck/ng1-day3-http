@@ -54,3 +54,14 @@
             }
         }
     })
+    .directive("phoneList", function(){
+        return {
+            templateUrl:"widgets/phone-list.html",
+            scope:{
+                "phones":"=",
+                "q":"=filterBy",
+                "orderPrep":"=orderBy",
+                "realOrder":"=isReverseOrder"
+            }
+        }
+    })

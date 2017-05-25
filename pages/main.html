@@ -13,9 +13,13 @@
 
     </select>
 
-        <div ng-repeat="item in phones | filter:q | orderBy:orderProp:realOrder">
+
+<phone-list phones="phones" filter-by="q" order-by="orderPrep" is-reverse-order="realOrder">
+</phone-list>
+
+<!--        <div ng-repeat="item in phones | filter:q | orderBy:orderProp:realOrder">
             <phone-detail phone="item"></phone-detail>
-        </div>
+        </div> -->
 
       <!--  <table class="table">
             <thead>
